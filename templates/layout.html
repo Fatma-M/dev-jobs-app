@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/output.css')}}" />
+  </head>
+  <body class="bg-lighterGray">
+    <header
+      class="bg-header-pattern-mobile w-full h-[160px] bg-no-repeat bg-cover md:bg-header-pattern sm:bg-header-pattern p-3 sm:p-0 relative">
+      <div class="container mx-auto flex justify-between items-center h-full">
+        <div class="logo flex items-center">
+          <h1 class="text-white text-3xl font-bold">devjobs</h1>
+        </div>
+        <div class="toggle flex items-center justify-center">
+          <img
+            src="/static/images/desktop/icon-sun.svg"
+            alt="sun svg"
+            class="mr-3 w-[20px] bg-sun-icon" />
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer" />
+            <div
+              class="w-9 h-5 bg-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-darkBlue after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-white"></div>
+          </label>
+          <img
+            src="/static/images/desktop/icon-moon.svg"
+            alt="moon svg"
+            class="ml-3 w-[18px]" />
+        </div>
+      </div>
+    </header>
+    <!-- EXTENDS CONTENT -->
+    <main class="container mx-auto">{% block body %}{% endblock %}</main>
+  </body>
+</html>
