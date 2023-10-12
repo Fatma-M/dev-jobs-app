@@ -17,3 +17,7 @@ def add_job_page():
 def job_details_page():
     job_title = request.args.get("job-title")
     return render_template("job-details.html", job_title=job_title)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
