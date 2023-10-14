@@ -44,36 +44,14 @@
 
 <!-- MAIN PAGE CONTENT - JOBS CARDS -->
 <div
-  class="jobs container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[80px] mb-10">
-  <!-- CARD -->
-  <div
-    class="card bg-white p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px]">
-    <!-- card image -->
-    <div
-      class="card-image bg-[#EA9310] w-[50px] h-[50px] flex items-center rounded-2xl absolute top-[-25px]">
-      <img src="/static/images/logos/scoot.svg" alt="" class="block mx-auto" />
-    </div>
-    <!-- card details -->
-    <div class="time mt-6">
-      <span class="text-darkGray">5h ago</span>
-      <span class="text-darkGray">.</span>
-      <span class="text-darkGray">Full Time</span>
-    </div>
-    <div class="title font-bold my-1">
-      <p class="text-lg">Senior software engineer</p>
-    </div>
-    <div class="companyName">
-      <span class="text-darkGray">Scoot</span>
-    </div>
-
-    <div class="companyLocation mt-8">
-      <span class="text-darkBlue font-bold">United Kingdom</span>
-    </div>
-  </div>
+  id="jobs-container"
+  class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[80px] mb-10">
+  <!-- CARDS GOES HERE FROM JS CODE -->
 </div>
 
 <div
-  class="loadMoreBtn bg-darkBlue py-2 px-5 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out w-fit font-bold mx-auto mb-24 cursor-pointer">
+  id="load-more-btn"
+  class="bg-darkBlue py-2 px-5 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out w-fit font-bold mx-auto mb-24 cursor-pointer">
   Load More
 </div>
 {% endblock %}
