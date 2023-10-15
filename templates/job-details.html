@@ -1,141 +1,90 @@
 {% extends "layout.html" %} {% block body %}
 <!-- PAGE HEADER -->
 <div
-  class="company-main container bg-white flex flex-col md:flex-row items-center justify-between absolute top-[120px] rounded-md md:h-[120px] md:w-full mx-auto">
+  class="company-main container bg-white dark:bg-darkCardColor flex flex-col md:flex-row items-center justify-between absolute top-[120px] rounded-md md:h-[120px] md:w-full mx-auto">
   <!-- company logo -->
   <div
-    class="company-logo bg-[#EA9310] md:h-full w-[50px] h-[50px] flex-1 flex items-center absolute top-[-25px] md:relative md:top-0 rounded-md md:rounded-none">
-    <img
-      src="/static/images/logos/scoot.svg"
-      alt=""
-      class="block mx-auto w-[80px]" />
+    class="company-logo md:h-full w-[50px] h-[50px] flex-1 flex items-center absolute top-[-25px] md:relative md:top-0 rounded-md md:rounded-none"
+    style="background: {{logo_background}}">
+    <img src="{{logo}}" alt="" class="block mx-auto w-[80px]" />
   </div>
   <!-- company name and website -->
   <div
     class="md:flex-[3] flex-1 flex flex-col items-start justify-center px-8 mt-10 md:mt-0">
-    <p class="text-2xl font-bold mb-1">Scoot</p>
-    <span class="text-darkGray">scoot.com</span>
+    <p class="text-2xl font-bold mb-1">{{company}}</p>
+    <span class="text-darkGray">{{website}}</span>
   </div>
   <!-- action -->
   <div class="flex-[2] flex items-center justify-center mr-3 my-3">
-    <button
-      class="bg-lighterGray px-4 py-3 text-darkBlue rounded-md font-bold hover:bg-lightBlue hover:text-white">
+    <a
+      class="bg-lighterGray dark:bg-darkThemeGray px-4 py-3 text-darkBlue dark:text-white rounded-md font-bold hover:bg-lightBlue hover:text-white"
+      href="{{website}}">
       Company Site
-    </button>
+    </a>
   </div>
 </div>
 
 <!-- PAGE MAIN CONTENT -->
-<div class="bg-white rounded-md p-7 md:mt-[120px] mt-[150px] mb-10">
+<div
+  class="bg-white dark:bg-darkCardColor rounded-md p-7 md:mt-[120px] mt-[150px] mb-10">
   <!-- job details -->
   <div class="flex items-center justify-between">
     <div class="time mt-1">
-      <span class="text-darkGray">5h ago</span>
+      <span class="text-darkGray">5{{postedAt}}</span>
       <span class="text-darkGray">.</span>
-      <span class="text-darkGray">Full Time</span>
-      <p class="text-lg font-bold my-1">Senior software engineer</p>
-      <p class="text-darkBlue font-bold">United Kingdom</p>
+      <span class="text-darkGray">{{contract}}</span>
+      <p class="text-lg font-bold my-1">{{position}}</p>
+      <p class="text-darkBlue font-bold">{{location}}</p>
     </div>
     <!-- .action -->
-    <button
-      class="bg-darkBlue md:py-2 md:px-7 py-1 px-3 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out">
+    <a
+      class="bg-darkBlue md:py-2 md:px-7 py-1 px-3 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out"
+      href="{{apply}}">
       Apply Now
-    </button>
+    </a>
   </div>
 
   <!-- JOB DETAILS -->
   <div class="mt-10 text-darkGray">
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad non nisi
-      perspiciatis quia sint. Dolorem repellat perferendis nam maiores, at id
-      accusantium debitis dolore, ut recusandae suscipit unde numquam.
-      Assumenda?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad non
-      nisi perspiciatis quia sint. Dolorem repellat perferendis nam maiores, at
-      id accusantium debitis dolore, ut recusandae suscipit unde numquam.
-      Assumenda?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad non
-      nisi perspiciatis quia sint. Dolorem repellat perferendis nam maiores, at
-      id accusantium debitis dolore, ut recusandae suscipit unde numquam.
-      Assumenda? Assumenda?Lorem, ipsum dolor sit amet consectetur adipisicing
-      elit. Ad non nisi perspiciatis quia sint. Dolorem repellat perferendis nam
-      maiores, at id accusantium debitis dolore, ut recusandae suscipit unde
-      numquam. Assumenda? Assumenda?Lorem, ipsum dolor sit amet consectetur
-      adipisicing elit. Ad non nisi perspiciatis quia sint. Dolorem repellat
-      perferendis nam maiores, at id accusantium debitis dolore, ut recusandae
-      suscipit unde numquam. Assumenda?
-    </p>
+    <p>{{description}}</p>
   </div>
 
   <!-- JOB REQUIREMENTS -->
   <div class="mt-10">
     <h2 class="font-bold text-xl mb-6">Requirements</h2>
-    <p class="text-darkGray">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, ad facere
-      sit fugiat quaerat dolore pariatur odit quasi similique tempore quas
-      cupiditate eius qui ea consequatur nemo omnis accusamus voluptatem! Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Quos, ad facere sit
-      fugiat quaerat dolore pariatur odit quasi similique tempore quas
-      cupiditate eius qui ea consequatur nemo omnis accusamus voluptatem!
-    </p>
+    <p class="text-darkGray">{{requirements_content}}</p>
     <ul class="list-disc list-inside mt-4 text-darkGray">
-      <li class="">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, commodi.
-      </li>
-      <li class="mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-        commodi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-        commodi.
-      </li>
-      <li class="mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, commodi.
-      </li>
-      <li class="mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, commodi.
-      </li>
+      {% for item in requirements_items %}
+      <li class="mt-3">{{item}}</li>
+      {% endfor %}
     </ul>
   </div>
 
   <!-- WHAT YOU WILL DO SECTION -->
   <div class="mt-10">
     <h2 class="font-bold text-xl mb-6">What You Will Do</h2>
-    <p class="text-darkGray">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, ad facere
-      sit fugiat quaerat dolore pariatur odit quasi similique tempore quas
-      cupiditate eius qui ea consequatur nemo omnis accusamus voluptatem! Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Quos, ad facere sit
-      fugiat quaerat dolore pariatur odit quasi similique tempore quas
-      cupiditate eius qui ea consequatur nemo omnis accusamus voluptatem!
-    </p>
+    <p class="text-darkGray">{{role_content}}</p>
     <ol class="list-disc list-inside mt-4 text-darkGray">
-      <li class="">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, commodi.
-      </li>
-      <li class="mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-        commodi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-        commodi.
-      </li>
-      <li class="mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, commodi.
-      </li>
-      <li class="mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, commodi.
-      </li>
+      {% for item in role_items %}
+      <li class="mt-3">{{item}}</li>
+      {% endfor %}
     </ol>
   </div>
 </div>
 
 <!-- PAGE FOOTER -->
 <div
-  class="bg-white mt-12 w-full flex items-center justify-between py-9 px-5 rounded-md">
+  class="bg-white dark:bg-darkCardColor mt-12 w-full flex items-center justify-between py-9 px-5 rounded-md">
   <div class="">
-    <h2 class="font-bold text-xl">Seniot Software Engineer</h2>
-    <span class="text-darkGray">Scoot</span>
+    <h2 class="font-bold text-xl">{{position}}</h2>
+    <span class="text-darkGray">{{company}}</span>
   </div>
   <div class="">
-    <button
-      class="bg-darkBlue md:py-2 md:px-7 py-1 px-3 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out">
+    <a
+      class="bg-darkBlue md:py-2 md:px-7 py-1 px-3 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out"
+      href="{{apply}}">
       Apply Now
-    </button>
+    </a>
   </div>
 </div>
 

@@ -1,10 +1,10 @@
 {% extends "layout.html" %} {% block body %}
 <!-- HEADER SEARCH DIV -->
 <div
-  class="filter container mx-auto bg-white flex flex-col md:flex-row items-center justify-between absolute top-[120px] rounded-md px-6 h-[70px]">
+  class="filter container mx-auto bg-white dark:bg-darkThemeBG flex flex-col md:flex-row items-center justify-between absolute top-[120px] rounded-md px-6 h-[70px]">
   <!-- filter by title... -->
   <div
-    class="searchInput flex items-center h-full border-r-2 border-lightGray pr-3 md:flex-[4] flex-1">
+    class="searchInput flex items-center h-full border-r-2 border-lightGray dark:border-darkGray pr-3 md:flex-[4] flex-1">
     <img
       src="/static/images/desktop/icon-search.svg"
       alt="search icon"
@@ -12,11 +12,11 @@
     <input
       type="text"
       placeholder="Filter by title.."
-      class="outline-none w-[70%]" />
+      class="outline-none w-[70%] bg-inherit dark:text-white" />
   </div>
   <!-- filter by location -->
   <div
-    class="location flex items-center h-full border-r-2 border-lightGray px-4 md:flex-[2] flex-1">
+    class="location flex items-center h-full border-r-2 border-lightGray dark:border-darkGray px-4 md:flex-[2] flex-1">
     <img
       src="/static/images/desktop/icon-location.svg"
       alt="location icon"
@@ -24,7 +24,7 @@
     <input
       type="text"
       placeholder="Filter by location"
-      class="outline-none w-[70%]" />
+      class="outline-none w-[70%] dark:text-white bg-inherit" />
   </div>
   <!-- filter by full time -->
   <div
@@ -34,7 +34,9 @@
       name="filterByFullTime"
       id="filterByFullTime"
       class="outline-none md:w-[20px] md:h-[20px] w-[10px] h-[10px] mr-2 accent-darkBlue cursor-pointer" />
-    <span class="md:mr-4 mr-2 font-bold text-sm">Full Time Only</span>
+    <span class="md:mr-4 mr-2 font-bold text-sm dark:text-lightGray"
+      >Full Time Only</span
+    >
     <button
       class="bg-darkBlue md:py-2 md:px-7 py-1 px-3 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out">
       Search
@@ -45,7 +47,7 @@
 <!-- MAIN PAGE CONTENT - JOBS CARDS -->
 <div
   id="jobs-container"
-  class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[80px] mb-10">
+  class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[80px] mb-10 dark:bg-darkThemeBG">
   <!-- CARDS GOES HERE FROM JS CODE -->
 </div>
 

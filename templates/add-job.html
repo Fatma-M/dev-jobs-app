@@ -1,14 +1,327 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static',filename='css/output.css')}}" />
-    <title>Document</title>
-  </head>
-  <body>
-    Add Job Goes here
-  </body>
-</html>
+{% extends "layout.html" %} {% block body %}
+
+<form class="mt-14 mx-auto px-8 sm:px-0">
+  <!-- COMPANY NAME AND WEBSITE -->
+  <div
+    class="flex flex-col sm:flex-row items-center justify-between sm:gap-8 gap-4 mt-4">
+    <!-- COMPANY NAME -->
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        type="text"
+        name="company-name"
+        id="company-name"
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+        placeholder=" "
+        required />
+      <label
+        for="company-name"
+        class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Company Name</label
+      >
+    </div>
+    <!-- COMPANY WEBSITE -->
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        type="url"
+        name="company-website"
+        id="company-website"
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+        placeholder=" "
+        required />
+      <label
+        for="company-name"
+        class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Company Website</label
+      >
+    </div>
+  </div>
+
+  <!-- COMPANY LOGO -->
+  <div
+    class="flex flex-col sm:flex-row sm:items-end items-center justify-between sm:gap-8 gap-4 mt-4">
+    <div class="relative z-0 w-full sm:mb-6 group">
+      <label for="company-logo" class="text-md text-darkGray"
+        >Company Logo</label
+      >
+      <input
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray"
+        id="company-logo"
+        type="file" />
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        type="text"
+        name="company-logo-color"
+        id="company-logo-color"
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+        placeholder=" "
+        required />
+      <label
+        for="company-logo-color"
+        class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Logo Color</label
+      >
+    </div>
+  </div>
+
+  <!-- JOB DATE AND LOCATION -->
+  <div
+    class="flex flex-col sm:flex-row items-end justify-between sm:gap-8 gap-4 mt-4">
+    <!-- JOB DATE -->
+    <div class="relative z-0 w-full sm:mb-6 group">
+      <label
+        for="job-date"
+        class="peer-focus:font-medium text-darkGray dark:text-lightGray"
+        >Job Date</label
+      >
+      <input
+        type="date"
+        name="job-date"
+        id="job-date"
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+        placeholder=" "
+        required />
+    </div>
+    <!-- JOB LOCATION -->
+    <div class="relative z-0 w-full sm:mb-6 mb-2 group">
+      <input
+        type="text"
+        name="job-location"
+        id="job-location"
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+        placeholder=" "
+        required />
+      <label
+        for="job-location"
+        class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Job Location</label
+      >
+    </div>
+  </div>
+
+  <!-- JOB TYPE AND POSITION -->
+  <div
+    class="flex flex-col sm:flex-row items-end justify-between sm:gap-8 gap-4 mt-4">
+    <!-- JOB TYPE -->
+    <div class="relative z-0 w-full sm:mb-6 group">
+      <label
+        for="job-type"
+        class="mb-4 text-sm text-darkGray dark:text-lightGray"
+        >Select job type
+      </label>
+      <select
+        id="job-type"
+        class="mt-2 bg-gray-50 border border-lightGray text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-darkBlueblock w-full p-2.5 dark:bg-gray-700 dark:border-darkGray dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option>Full Time</option>
+        <option>Part Time</option>
+      </select>
+    </div>
+    <!-- JOB POSITION -->
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        type="text"
+        name="job-position"
+        id="job-position"
+        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+        placeholder=" "
+        required />
+      <label
+        for="job-position"
+        class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Job Position</label
+      >
+    </div>
+  </div>
+
+  <!-- JOB DESCRIPTION  -->
+  <div class="mt-4 relative z-0 w-full mb-6 group">
+    <input
+      type="text"
+      name="job-description"
+      id="job-description"
+      class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+      placeholder=" "
+      required />
+    <label
+      for="job-description"
+      class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Job description</label
+    >
+  </div>
+
+  <!-- JOB REQUIREMENTS -->
+  <div
+    class="relative z-0 mt-8 w-full flex items-baseline justify-between gap-8">
+    <input
+      type="text"
+      name="job-requirements"
+      id="job-requirements"
+      class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+      placeholder=" "
+      required />
+    <label
+      for="job-requirements"
+      class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Job requirements</label
+    >
+  </div>
+
+  <!-- JOB ROLE -->
+  <div
+    class="relative z-0 mt-8 w-full flex items-baseline justify-between gap-8">
+    <input
+      type="text"
+      name="job-role"
+      id="job-role"
+      class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+      placeholder=" "
+      required />
+    <label
+      for="job-role"
+      class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Job role</label
+    >
+  </div>
+
+  <!-- REQUIREMENTS AND ROLE ITEMS -->
+  <div
+    class="flex flex-col sm:flex-row items-center justify-between sm:gap-8 gap-4 mt-14">
+    <!-- REQUIREMENTS ITEMS -->
+    <div class="flex flex-col flex-1 w-full">
+      <h3 class="text-darkGray dark:text-lightGray font-bold mb-4">
+        Job Requirements Items
+      </h3>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="requirements-item-1"
+          id="requirements-item-1"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="requirements-item-1"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Requirements item 1</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="requirements-item-2"
+          id="requirements-item-2"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="requirements-item-2"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Requirements item 2</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="requirements-item-3"
+          id="requirements-item-3"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="requirements-item-3"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Requirements item 3</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="requirements-item-4"
+          id="requirements-item-4"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="requirements-item-4"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Requirements item 4</label
+        >
+      </div>
+    </div>
+
+    <!-- ROLE ITEMS-->
+    <div class="w-full flex flex-col items-baseline justify-between flex-1">
+      <!-- JOB ROLE ITEMS -->
+      <h3 class="text-darkGray dark:text-lightGray font-bold mb-4">
+        Job Role Items
+      </h3>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="role-item-1"
+          id="role-item-1"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="role-item-1"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Role item 1</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="role-item-2"
+          id="role-item-2"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="role-item-2"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Role item 2</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="role-item-3"
+          id="role-item-3"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="role-item-3"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Role item 3</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="role-item-4"
+          id="role-item-4"
+          class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
+          placeholder=" "
+          required />
+        <label
+          for="role-item-4"
+          class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Role item 4</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM ACTION -->
+  <div class="w-full text-center">
+    <button
+      type="submit"
+      class="text-white bg-darkBlue hover:bg-lightBlue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-14 py-3 text-center dark:bg-darkBlue dark:hover:bg-darkBlue dark:focus:ring-lightBlue mb-14 mt-8">
+      Add Job
+    </button>
+  </div>
+</form>
+
+{% endblock %}

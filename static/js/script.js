@@ -1,15 +1,34 @@
 // UI ELEMENTS
 const jobsContainer = document.getElementById("jobs-container");
 const loadMoreBtn = document.getElementById("load-more-btn");
+const darkModeInput = document.getElementById("darkModeInput");
 
 // GLOBAL VARIABLES
 let data;
+let darkMode = localStorage.getItem("darkMode")
+  ? JSON.parse(localStorage.getItem("darkMode"))
+  : false;
+
+function toggleDarkMode() {
+  if (darkModeInput.checked) {
+    localStorage.setItem("darkMode", true);
+    document.body.classList.add("dark");
+  } else if (darkModeInput.checked == false) {
+    localStorage.setItem("darkMode", false);
+    document.body.classList.remove("dark");
+  }
+}
+// Set the checked attribute based on the darkMode state
+darkModeInput.checked = darkMode;
+
+toggleDarkMode();
+darkModeInput.addEventListener("change", toggleDarkMode);
 
 // CREATE DIV ELEMENTS FOR JOB CARD
 function createDiv(element) {
   const div = document.createElement("div");
   div.className =
-    "card bg-white p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px]";
+    "card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px]";
   div.innerHTML = `
                   <!-- card image -->
                   <div

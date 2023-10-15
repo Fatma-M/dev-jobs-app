@@ -10,10 +10,10 @@
   </head>
   <body class="bg-lighterGray">
     <header
-      class="bg-header-pattern-mobile w-full h-[160px] bg-no-repeat bg-cover md:bg-header-pattern sm:bg-header-pattern p-3 sm:p-0 relative">
+      class="bg-header-pattern-mobile w-full h-[160px] bg-no-repeat bg-cover md:bg-header-pattern sm:bg-header-pattern p-3 sm:p-0 relative dark:bg-darkThemeBG">
       <div class="container mx-auto flex justify-between items-center h-full">
         <div class="logo flex items-center">
-          <h1 class="text-white text-3xl font-bold">devjobs</h1>
+          <a class="text-white text-3xl font-bold" href="/">devjobs</a>
         </div>
         <div class="toggle flex items-center justify-center">
           <img
@@ -21,7 +21,11 @@
             alt="sun svg"
             class="mr-3 w-[20px] bg-sun-icon" />
           <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" />
+            <input
+              id="darkModeInput"
+              type="checkbox"
+              value=""
+              class="sr-only peer" />
             <div
               class="w-9 h-5 bg-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-darkBlue after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-white"></div>
           </label>
@@ -33,6 +37,8 @@
       </div>
     </header>
     <!-- EXTENDS CONTENT -->
-    <main class="container mx-auto">{% block body %}{% endblock %}</main>
+    <main class="container mx-auto dark:bg-darkThemeBG">
+      {% block body %}{% endblock %}
+    </main>
   </body>
 </html>
