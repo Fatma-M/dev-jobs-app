@@ -51,6 +51,7 @@ function createDiv(element) {
                     <span class="text-darkBlue font-bold">${element.location}</span>
                   </div>
         `;
+
   jobsContainer.appendChild(div);
 }
 
@@ -83,5 +84,10 @@ function loadMore() {
 }
 
 // FUNCTION CALLS AND EVENT LISTENERS
-updateUI();
-loadMoreBtn.addEventListener("click", loadMore);
+if (jobsContainer != null) {
+  updateUI();
+}
+
+if (loadMoreBtn != null) {
+  loadMoreBtn.addEventListener("click", loadMore);
+}

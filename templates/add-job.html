@@ -15,7 +15,8 @@
         name="company-name"
         id="company-name"
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-        placeholder=" " />
+        placeholder=" "
+        required />
       <label
         for="company-name"
         class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -29,7 +30,8 @@
         name="company-website"
         id="company-website"
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-        placeholder=" " />
+        placeholder=" "
+        required />
       <label
         for="company-name"
         class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -43,13 +45,15 @@
     class="flex flex-col sm:flex-row sm:items-end items-center justify-between sm:gap-8 gap-4 mt-4">
     <div class="relative z-0 w-full sm:mb-6 group">
       <label for="company-logo" class="text-md text-darkGray"
-        >Company Logo</label
+        >Company Logo (svg only)</label
       >
       <input
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray"
         type="file"
         id="logo"
-        name="logo" />
+        name="logo"
+        accept="image/svg+xml"
+        required />
     </div>
     <div class="relative z-0 w-full mb-6 group">
       <input
@@ -57,7 +61,8 @@
         name="company-logo-color"
         id="company-logo-color"
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-        placeholder=" " />
+        placeholder=" "
+        required />
       <label
         for="company-logo-color"
         class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -81,7 +86,8 @@
         name="job-date"
         id="job-date"
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-        placeholder=" " />
+        placeholder=" "
+        required />
     </div>
     <!-- JOB LOCATION -->
     <div class="relative z-0 w-full sm:mb-6 mb-2 group">
@@ -90,7 +96,8 @@
         name="job-location"
         id="job-location"
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-        placeholder=" " />
+        placeholder=" "
+        required />
       <label
         for="job-location"
         class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -112,7 +119,8 @@
       <select
         id="job-type"
         name="job-type"
-        class="mt-2 bg-gray-50 border border-lightGray text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-darkBlueblock w-full p-2.5 dark:bg-gray-700 dark:border-darkGray dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        class="mt-2 bg-gray-50 border border-lightGray text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-darkBlueblock w-full p-2.5 dark:bg-gray-700 dark:border-darkGray dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        required>
         <option value="Full Time">Full Time</option>
         <option value="Part Time">Part Time</option>
       </select>
@@ -124,7 +132,8 @@
         name="job-position"
         id="job-position"
         class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-        placeholder=" " />
+        placeholder=" "
+        required />
       <label
         for="job-position"
         class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -140,7 +149,8 @@
       name="job-description"
       id="job-description"
       class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-      placeholder=" " />
+      placeholder=" "
+      required />
     <label
       for="job-description"
       class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -156,7 +166,8 @@
       name="job-requirements"
       id="job-requirements"
       class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-      placeholder=" " />
+      placeholder=" "
+      required />
     <label
       for="job-requirements"
       class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -172,7 +183,8 @@
       name="job-role"
       id="job-role"
       class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-      placeholder=" " />
+      placeholder=" "
+      required />
     <label
       for="job-role"
       class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -194,7 +206,8 @@
           name="requirements-item-1"
           id="requirements-item-1"
           class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-          placeholder=" " />
+          placeholder=" "
+          required />
         <label
           for="requirements-item-1"
           class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -254,7 +267,8 @@
           name="role-item-1"
           id="role-item-1"
           class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-lightGray appearance-none dark:text-white dark:border-lightGray dark:focus:border-darkBlue focus:outline-none focus:border-darkBlue peer"
-          placeholder=" " />
+          placeholder=" "
+          required />
         <label
           for="role-item-1"
           class="peer-focus:font-medium absolute text-sm text-darkGray dark:text-lightGray duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-darkBlue peer-focus:dark:text-darkBlue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
