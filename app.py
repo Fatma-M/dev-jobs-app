@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import csv
+import uuid
 
 app = Flask(__name__)
 
@@ -19,10 +20,6 @@ def get_csv_data():
 def home_page():
     return render_template("index.html")
 
-# CREATE ADD JOB JOB ROUTE
-@app.route("/add-job")
-def add_job_page():
-    return render_template("add-job.html")
 
 # CREATE JOB DETAILS ROUTE
 @app.route("/job-details/<id>", methods=['GET'])
@@ -61,6 +58,44 @@ def job_details_page(id):
     else:
         return "Data not found"
 
+# CREATE ADD JOB ROUTE AND HANDLE FORM DATA
+@app.route("/add-job", methods=["GET", "POST"])
+def add_job_page():
+    if request.method == "GET":
+        return render_template("add-job.html")
+    elif request.method == "POST":
+        id = uuid.uuid4()
+        company = request.form["company-name"]
+        website = request.form["company-website"]
+        logo_background = request.form["company-logo-color"]
+        posted_at = request.form["job-date"]
+        location = request.form["job-location"]
+        contract = request.form["job-type"]
+        position = request.form["job-position"]
+        description = request.form['job-description']
+        requirements_content = request.form["job-requirements"]
+        roles_content = request.form["job-role"]
+        requirements_item_1 = request.form["requirements-item-1"]
+        requirements_item_2 = request.form["requirements-item-2"]
+        requirements_item_3 = request.form["requirements-item-3"]
+        requirements_item_4 = request.form["requirements-item-4"]
+        roles_item_1 = request.form["role-item-1"]
+        roles_item_2 = request.form["role-item-2"]
+        roles_item_3 = request.form["role-item-3"]
+        roles_item_4 = request.form["role-item-4"]
+
+        # handle image upload 
+        file_name = request.files["logo"].filename
+        logo_image_path = f"/static/images/logos/{file_name}"
+        if "logo" in request.files:
+            image = request.files["logo"]
+            if image.filename != "":
+                image.save("static/images/logos/" + image.filename)
+
+        with open("./static/data.csv", "a") as file:
+            file.write(f'{id},"{company}","{logo_image_path}","{logo_background}","{position}","{posted_at}","{contract}","{location}","{website}","{website}","{description}","{requirements_content}","{requirements_item_1}","{requirements_item_2}","{requirements_item_3}","{requirements_item_4}","{roles_content}","{roles_item_1}","{roles_item_2}","{roles_item_3}","{roles_item_4}"\n')
+
+        return redirect("/")
 
 # RUN APP WITH DEBUG MODE
 if __name__ == '__main__':
