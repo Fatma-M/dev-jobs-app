@@ -20,7 +20,6 @@ def get_csv_data():
 def home_page():
     return render_template("index.html")
 
-
 # CREATE JOB DETAILS ROUTE
 @app.route("/job-details/<id>", methods=['GET'])
 def job_details_page(id):
@@ -58,43 +57,60 @@ def job_details_page(id):
     else:
         return "Data not found"
 
+# CREATE JOB CLASS
+class Job:
+    def __init__(self):
+        self.id = str(uuid.uuid4())
+        self.company = ""
+        self.website = ""
+        self.logo_background = ""
+        self.posted_at = ""
+        self.location = ""
+        self.contract = ""
+        self.position = ""
+        self.description = ""
+        self.requirements_content = ""
+        self.requirements_items = ["", "", "", ""]
+        self.roles_content = ""
+        self.roles_items = ["", "", "", ""]
+        self.logo_image_path = ""
+
+    def validate_and_set_data(self, form_data):
+        self.company = form_data.get("company-name", "")
+        self.website = form_data.get("company-website", "")
+        self.logo_background = form_data.get("company-logo-color", "")
+        self.posted_at = form_data.get("job-date", "")
+        self.location = form_data.get("job-location", "")
+        self.contract = form_data.get("job-type", "")
+        self.position = form_data.get("job-position", "")
+        self.description = form_data.get("job-description", "")
+        self.requirements_content = form_data.get("job-requirements", "")
+        self.requirements_items = [form_data.get(f"requirements-item-{i}", "") for i in range(1, 5)]
+        self.roles_content = form_data.get("job-role", "")
+        self.roles_items = [form_data.get(f"role-item-{i}", "") for i in range(1, 5)]
+    
+    def handle_image_upload(self, uploaded_file):
+        if uploaded_file:
+            image = request.files["logo"]
+            image.save("static/images/logos/" + image.filename)
+    
+    def save_to_csv(self):
+        with open("./static/data.csv", "a") as file:
+            file.write(
+                f'{self.id},"{self.company}","{self.logo_image_path}","{self.logo_background}","{self.position}","{self.posted_at}","{self.contract}","{self.location}","{self.website}","{self.website}","{self.description}","{self.requirements_content}","{self.requirements_items[0]}","{self.requirements_items[1]}","{self.requirements_items[2]}","{self.requirements_items[3]}","{self.roles_content}","{self.roles_items[0]}","{self.roles_items[1]}","{self.roles_items[2]}","{self.roles_items[3]}"\n'
+            )
+
 # CREATE ADD JOB ROUTE AND HANDLE FORM DATA
 @app.route("/add-job", methods=["GET", "POST"])
 def add_job_page():
+    job = Job()
+
     if request.method == "GET":
         return render_template("add-job.html")
     elif request.method == "POST":
-        id = uuid.uuid4()
-        company = request.form["company-name"]
-        website = request.form["company-website"]
-        logo_background = request.form["company-logo-color"]
-        posted_at = request.form["job-date"]
-        location = request.form["job-location"]
-        contract = request.form["job-type"]
-        position = request.form["job-position"]
-        description = request.form['job-description']
-        requirements_content = request.form["job-requirements"]
-        roles_content = request.form["job-role"]
-        requirements_item_1 = request.form["requirements-item-1"]
-        requirements_item_2 = request.form["requirements-item-2"]
-        requirements_item_3 = request.form["requirements-item-3"]
-        requirements_item_4 = request.form["requirements-item-4"]
-        roles_item_1 = request.form["role-item-1"]
-        roles_item_2 = request.form["role-item-2"]
-        roles_item_3 = request.form["role-item-3"]
-        roles_item_4 = request.form["role-item-4"]
-
-        # handle image upload 
-        file_name = request.files["logo"].filename
-        logo_image_path = f"/static/images/logos/{file_name}"
-        if "logo" in request.files:
-            image = request.files["logo"]
-            if image.filename != "":
-                image.save("static/images/logos/" + image.filename)
-
-        with open("./static/data.csv", "a") as file:
-            file.write(f'{id},"{company}","{logo_image_path}","{logo_background}","{position}","{posted_at}","{contract}","{location}","{website}","{website}","{description}","{requirements_content}","{requirements_item_1}","{requirements_item_2}","{requirements_item_3}","{requirements_item_4}","{roles_content}","{roles_item_1}","{roles_item_2}","{roles_item_3}","{roles_item_4}"\n')
-
+        job.validate_and_set_data(request.form)
+        job.handle_image_upload(request.files.get("logo"))
+        job.save_to_csv()
         return redirect("/")
 
 # RUN APP WITH DEBUG MODE
