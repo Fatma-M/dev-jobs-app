@@ -26,7 +26,7 @@
       placeholder="Filter by location"
       class="outline-none w-[70%] dark:text-white bg-inherit" />
   </div>
-  <!-- filter by full time -->
+  <!-- filter by full time and actions -->
   <div
     class="location flex items-center justify-center h-full md:flex-[3] flex-1 px-2">
     <input
@@ -37,10 +37,24 @@
     <span class="md:mr-4 mr-2 font-bold text-sm dark:text-lightGray"
       >Full Time Only</span
     >
-    <button
-      class="bg-darkBlue md:py-2 md:px-7 py-1 px-3 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out">
-      Search
-    </button>
+    <div
+      class="flex items-center justify-center bg-darkBlue text-2xl font-bold w-9 h-9 rounded-lg mr-3 shadow-sm shadow-darkGray">
+      <button id="add-job-btn" class="cursor-pointer text-center">
+        <img
+          src="/static/images/desktop/icon-search-white.svg"
+          alt=""
+          class="w-[20px]" />
+      </button>
+    </div>
+    <div
+      class="flex items-center justify-center bg-darkBlue text-white text-2xl font-bold w-9 h-9 rounded-lg shadow-sm shadow-darkGray">
+      <a
+        id="add-job-btn"
+        class="cursor-pointer w-full h-full text-center"
+        href="/add-job"
+        >+</a
+      >
+    </div>
   </div>
 </div>
 
@@ -56,4 +70,5 @@
   class="bg-darkBlue py-2 px-5 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out w-fit font-bold mx-auto mb-24 cursor-pointer">
   Load More
 </div>
+
 {% endblock %}

@@ -580,6 +580,10 @@ video {
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -598,6 +602,26 @@ video {
 
 .top-\[120px\] {
   top: 120px;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
+.right-8 {
+  right: 2rem;
 }
 
 .-z-10 {
@@ -759,6 +783,14 @@ video {
   height: 100%;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-9 {
+  height: 2.25rem;
+}
+
 .w-9 {
   width: 2.25rem;
 }
@@ -802,6 +834,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .flex-1 {
@@ -929,11 +965,6 @@ video {
 .bg-darkBlue {
   --tw-bg-opacity: 1;
   background-color: rgb(89 100 224 / var(--tw-bg-opacity));
-}
-
-.bg-darkThemeBG {
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 23 33 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
@@ -1124,6 +1155,33 @@ video {
 
 .accent-darkBlue {
   accent-color: #5964E0;
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-darkBlue {
+  --tw-shadow-color: #5964E0;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-lightGray {
+  --tw-shadow-color: #E8E8EA;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-darkGray {
+  --tw-shadow-color: #6E8098;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .outline-none {
@@ -1326,14 +1384,14 @@ video {
   background-color: rgb(18 23 33 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-gray-700) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
 :is(.dark .dark\:bg-darkThemeGray) {
   --tw-bg-opacity: 1;
   background-color: rgb(18 23 33 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-gray-700) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:text-lightGray) {
