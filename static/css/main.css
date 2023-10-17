@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* dark mode main color */
 .dark {
   background-color: #121721;
   color: #fff;
+}
+
+/* remove the input autofill background*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
 }
