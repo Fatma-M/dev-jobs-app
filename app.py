@@ -45,7 +45,7 @@ def job_details_page(id):
         description = item["description"]
         requirements_content = item["requirements/content"]
         role_content = item["role/content"]
-        # Retrieve the requirements items and role items
+        # requirements and role items
         requirements_items = [item.get(f"requirements/items/{i}") for i in range(7)]
         role_items = [item.get(f"role/items/{i}") for i in range(5)]
         # Check if any of the requirements and role items are empty
@@ -93,6 +93,7 @@ class Job:
         if uploaded_file:
             image = request.files["logo"]
             image.save("static/images/logos/" + image.filename)
+            self.logo_image_path = f"/static/images/logos/{image.filename}"
     
     def save_to_csv(self):
         with open("./static/data.csv", "a") as file:
