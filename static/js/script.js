@@ -2,6 +2,7 @@
 const jobsContainer = document.getElementById("jobs-container");
 const loadMoreBtn = document.getElementById("load-more-btn");
 const darkModeInput = document.getElementById("darkModeInput");
+const searchBtn = document.getElementById("search-job-btn");
 
 // GLOBAL VARIABLES
 let data;
@@ -61,6 +62,7 @@ function updateUI() {
     .then((response) => response.json())
     .then((items) => {
       data = items;
+      data.reverse();
       const temp = data.slice(0, 9);
       temp.forEach((element) => {
         createDiv(element);
@@ -70,6 +72,38 @@ function updateUI() {
     .catch((error) => {
       console.error("Error:", error);
     });
+}
+
+// FILTER BY TITLE
+function searchJobs() {
+  const filterByTitleInput = document.getElementById("filter-by-title");
+  const filterByLocationInput = document.getElementById("filter-by-location");
+  const filterByFulltimeInput = document.getElementById("filter-by-fulltime");
+
+  const location = filterByLocationInput.value.toLowerCase();
+  const title = filterByTitleInput.value.toLowerCase();
+  const fulltime = filterByFulltimeInput.checked;
+
+  const filteredByTitleAndPosition = data.filter((job) => {
+    return (
+      job.position.toLowerCase().includes(title) &&
+      job.location.toLowerCase().includes(location)
+    );
+  });
+
+  const selectedJobs = filteredByTitleAndPosition.filter((job) => {
+    if (fulltime) {
+      return job.contract.includes("Full");
+    } else {
+      return job.contract;
+    }
+  });
+
+  jobsContainer.innerHTML = " ";
+  loadMoreBtn.style.display = "none";
+  selectedJobs.forEach((job) => {
+    createDiv(job);
+  });
 }
 
 // HANDLE LOAD MORE DATA
@@ -90,4 +124,8 @@ if (jobsContainer != null) {
 
 if (loadMoreBtn != null) {
   loadMoreBtn.addEventListener("click", loadMore);
+}
+
+if (searchBtn != null) {
+  searchBtn.addEventListener("click", searchJobs);
 }
