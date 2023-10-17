@@ -2,6 +2,9 @@
 const jobsContainer = document.getElementById("jobs-container");
 const loadMoreBtn = document.getElementById("load-more-btn");
 const darkModeInput = document.getElementById("darkModeInput");
+const filterByTitleInput = document.getElementById("filter-by-title");
+const filterByLocationInput = document.getElementById("filter-by-location");
+const filterByFulltimeInput = document.getElementById("filter-by-fulltime");
 const searchBtn = document.getElementById("search-job-btn");
 
 // GLOBAL VARIABLES
@@ -76,10 +79,6 @@ function updateUI() {
 
 // FILTER BY TITLE
 function searchJobs() {
-  const filterByTitleInput = document.getElementById("filter-by-title");
-  const filterByLocationInput = document.getElementById("filter-by-location");
-  const filterByFulltimeInput = document.getElementById("filter-by-fulltime");
-
   const location = filterByLocationInput.value.toLowerCase();
   const title = filterByTitleInput.value.toLowerCase();
   const fulltime = filterByFulltimeInput.checked;
@@ -128,4 +127,25 @@ if (loadMoreBtn != null) {
 
 if (searchBtn != null) {
   searchBtn.addEventListener("click", searchJobs);
+
+  filterByTitleInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      searchJobs();
+    }
+  });
+
+  filterByLocationInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      searchJobs();
+    }
+  });
+
+  filterByFulltimeInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      searchJobs();
+    }
+  });
 }
