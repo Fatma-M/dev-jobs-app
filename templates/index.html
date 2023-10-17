@@ -1,10 +1,10 @@
 {% extends "layout.html" %} {% block body %}
 <!-- HEADER SEARCH DIV -->
 <div
-  class="filter container mx-auto bg-white dark:bg-darkThemeBG flex flex-col md:flex-row items-center justify-between absolute top-[120px] rounded-md px-6 h-[70px]">
+  class="filter container mx-auto bg-white dark:bg-darkThemeBG flex flex-col md:flex-row items-center md:justify-between justify-center gap-3 absolute top-[120px] rounded-md md:px-6 md:h-[70px] py-3 sm:px-12 px-3">
   <!-- filter by title... -->
   <div
-    class="searchInput flex items-center h-full border-r-2 border-lightGray dark:border-darkGray pr-3 md:flex-[4] flex-1">
+    class="searchInput flex items-center h-full md:border-r-2 border-lightGray dark:border-darkGray md:pr-3 md:flex-[4] flex-1">
     <img
       src="/static/images/desktop/icon-search.svg"
       alt="search icon"
@@ -12,11 +12,13 @@
     <input
       type="text"
       placeholder="Filter by title.."
+      name="filter-by-title"
+      id="filter-by-title"
       class="outline-none w-[70%] bg-inherit dark:text-white" />
   </div>
   <!-- filter by location -->
   <div
-    class="location flex items-center h-full border-r-2 border-lightGray dark:border-darkGray px-4 md:flex-[2] flex-1">
+    class="location flex items-center h-full md:border-r-2 border-lightGray dark:border-darkGray md:px-4 md:flex-[2] flex-1">
     <img
       src="/static/images/desktop/icon-location.svg"
       alt="location icon"
@@ -24,6 +26,8 @@
     <input
       type="text"
       placeholder="Filter by location"
+      name="filter-by-location"
+      id="filter-by-location"
       class="outline-none w-[70%] dark:text-white bg-inherit" />
   </div>
   <!-- filter by full time and actions -->
@@ -31,15 +35,15 @@
     class="location flex items-center justify-center h-full md:flex-[3] flex-1 px-2">
     <input
       type="checkbox"
-      name="filterByFullTime"
-      id="filterByFullTime"
-      class="outline-none md:w-[20px] md:h-[20px] w-[10px] h-[10px] mr-2 accent-darkBlue cursor-pointer" />
+      name="filter-by-fulltime"
+      id="filter-by-fulltime"
+      class="outline-none w-[20px] h-[20px] mr-2 accent-darkBlue cursor-pointer" />
     <span class="md:mr-4 mr-2 font-bold text-sm dark:text-lightGray"
       >Full Time Only</span
     >
     <div
       class="flex items-center justify-center bg-darkBlue text-2xl font-bold w-9 h-9 rounded-lg mr-3 shadow-sm shadow-darkGray">
-      <button id="add-job-btn" class="cursor-pointer text-center">
+      <button id="search-job-btn" class="cursor-pointer text-center">
         <img
           src="/static/images/desktop/icon-search-white.svg"
           alt=""
