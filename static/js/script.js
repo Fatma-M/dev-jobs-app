@@ -32,13 +32,12 @@ darkModeInput.addEventListener("change", toggleDarkMode);
 function createDiv(element) {
   const div = document.createElement("div");
   div.onclick = function () {
-    window.location.href = `/job-details/${element.id}`;
+    window.open(`/job-details/${element.id}`, "_blank");
   };
   div.className =
     "card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px] cursor-pointer";
 
   div.innerHTML = `
-                 
                   <!-- card image -->
                   <div
                     class="card-image w-[50px] h-[50px] flex items-center rounded-2xl absolute top-[-25px]" style="background: ${element.logoBackground}" >
