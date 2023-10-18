@@ -30,13 +30,11 @@ darkModeInput.addEventListener("change", toggleDarkMode);
 // CREATE DIV ELEMENTS FOR JOB CARD
 function createDiv(element) {
   const div = document.createElement("div");
-  div.onclick = function () {
-    window.open(`/job-details/${element.id}`, "_blank");
-  };
   div.className =
     "card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px] cursor-pointer";
 
   div.innerHTML = `
+                <a href='/job-details/${element.id}'>
                   <!-- card image -->
                   <div
                     class="card-image w-[50px] h-[50px] flex items-center rounded-2xl absolute top-[-25px]" style="background: ${element.logoBackground}" >
@@ -57,6 +55,7 @@ function createDiv(element) {
                   <div class="companyLocation mt-8">
                     <span class="text-darkBlue font-bold">${element.location}</span>
                   </div>
+                </a>
         `;
 
   jobsContainer.appendChild(div);
