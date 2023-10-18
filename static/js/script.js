@@ -108,6 +108,16 @@ function searchJobs() {
   selectedJobs.forEach((job) => {
     createDiv(job);
   });
+
+  if (selectedJobs.length < 1) {
+    jobsContainer.innerHTML = `
+    <h1 class="text-red-700 w-full text-center text-2xl col-span-4 mt-4">
+    No data found for this search.
+  </h1> 
+    `;
+  }
+
+  console.log(selectedJobs);
 }
 
 // HANDLE LOAD MORE DATA
