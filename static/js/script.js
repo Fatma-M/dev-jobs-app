@@ -31,13 +31,18 @@ darkModeInput.addEventListener("change", toggleDarkMode);
 // CREATE DIV ELEMENTS FOR JOB CARD
 function createDiv(element) {
   const div = document.createElement("div");
+  div.onclick = function () {
+    window.location.href = `/job-details/${element.id}`;
+  };
   div.className =
-    "card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px]";
+    "card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px] cursor-pointer";
+
   div.innerHTML = `
+                 
                   <!-- card image -->
                   <div
                     class="card-image w-[50px] h-[50px] flex items-center rounded-2xl absolute top-[-25px]" style="background: ${element.logoBackground}" >
-                    <img src="${element.logo}" alt="" class="block mx-auto"/>
+                    <img src="${element.logo}" alt="" class="block mx-auto" />
                   </div>
                   <!-- card details -->
                   <div class="time mt-6">
@@ -46,7 +51,7 @@ function createDiv(element) {
                     <span class="text-darkGray">${element.contract}</span>
                   </div>
                   <div class="title font-bold my-1">
-                    <a class="text-lg" href="/job-details/${element.id}">${element.position}</a>
+                    <p class="text-lg">${element.position}</p>
                   </div>
                   <div class="companyName">
                     <span class="text-darkGray">${element.company}</span>
@@ -119,33 +124,12 @@ function loadMore() {
 // FUNCTION CALLS AND EVENT LISTENERS
 if (jobsContainer != null) {
   updateUI();
-}
-
-if (loadMoreBtn != null) {
   loadMoreBtn.addEventListener("click", loadMore);
-}
-
-if (searchBtn != null) {
   searchBtn.addEventListener("click", searchJobs);
 
-  filterByTitleInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      searchJobs();
+  [filterByTitleInput, filterByLocationInput, filterByFulltimeInput].forEach(
+    (input) => {
+      input.addEventListener("input", searchJobs);
     }
-  });
-
-  filterByLocationInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      searchJobs();
-    }
-  });
-
-  filterByFulltimeInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      searchJobs();
-    }
-  });
+  );
 }
