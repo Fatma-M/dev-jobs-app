@@ -5,7 +5,6 @@ const darkModeInput = document.getElementById("darkModeInput");
 const filterByTitleInput = document.getElementById("filter-by-title");
 const filterByLocationInput = document.getElementById("filter-by-location");
 const filterByFulltimeInput = document.getElementById("filter-by-fulltime");
-const searchBtn = document.getElementById("search-job-btn");
 
 // GLOBAL VARIABLES
 let data;
@@ -133,8 +132,8 @@ function loadMore() {
 // FUNCTION CALLS AND EVENT LISTENERS
 if (jobsContainer != null) {
   updateUI();
+
   loadMoreBtn.addEventListener("click", loadMore);
-  searchBtn.addEventListener("click", searchJobs);
 
   [filterByTitleInput, filterByLocationInput, filterByFulltimeInput].forEach(
     (input) => {
