@@ -1,7 +1,9 @@
+# GLOBAL IMPORTS
 from flask import Flask, render_template, request, redirect
 import csv
 import uuid
 
+# SET THE APP
 app = Flask(__name__)
 
 # CREATE ROUTE FOR DATA TO USE IN JS CODE

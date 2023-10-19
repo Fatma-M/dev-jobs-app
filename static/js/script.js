@@ -12,7 +12,8 @@ let darkMode = localStorage.getItem("darkMode")
   ? JSON.parse(localStorage.getItem("darkMode"))
   : false;
 
-function toggleDarkMode() {
+// HANDLE DARK MODE AND SET USER CHOICE TO LOCAL STORAGE
+function handleDarkMode() {
   if (darkModeInput.checked) {
     localStorage.setItem("darkMode", true);
     document.body.classList.add("dark");
@@ -21,13 +22,11 @@ function toggleDarkMode() {
     document.body.classList.remove("dark");
   }
 }
+
 // Set the checked attribute based on the darkMode state
 darkModeInput.checked = darkMode;
 
-toggleDarkMode();
-darkModeInput.addEventListener("change", toggleDarkMode);
-
-// CREATE DIV ELEMENTS FOR JOB CARD
+// CREATE DIV ELEMENT FOR JOB CARD
 function createDiv(element) {
   const div = document.createElement("div");
   div.className =
@@ -79,7 +78,7 @@ function updateUI() {
     });
 }
 
-// FILTER BY TITLE
+// FILTER BY TITLE, LOCATION AND FULLTIME HANDLE
 function searchJobs() {
   const location = filterByLocationInput.value.toLowerCase();
   const title = filterByTitleInput.value.toLowerCase();
@@ -129,12 +128,13 @@ function loadMore() {
 // FUNCTION CALLS AND EVENT LISTENERS
 if (jobsContainer != null) {
   updateUI();
-
   loadMoreBtn.addEventListener("click", loadMore);
-
   [filterByTitleInput, filterByLocationInput, filterByFulltimeInput].forEach(
     (input) => {
       input.addEventListener("input", searchJobs);
     }
   );
 }
+
+handleDarkMode();
+darkModeInput.addEventListener("change", handleDarkMode);
