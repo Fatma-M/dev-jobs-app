@@ -113,8 +113,6 @@ function searchJobs() {
   </h1> 
     `;
   }
-
-  console.log(selectedJobs);
 }
 
 // HANDLE LOAD MORE DATA
