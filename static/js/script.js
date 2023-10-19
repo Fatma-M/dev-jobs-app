@@ -34,7 +34,7 @@ function createDiv(element) {
     "card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px] cursor-pointer";
 
   div.innerHTML = `
-                <a href='/job-details/${element.id}'>
+                <a href='/job-details/${element.id}' target="_blank">
                   <!-- card image -->
                   <div
                     class="card-image w-[50px] h-[50px] flex items-center rounded-2xl absolute top-[-25px]" style="background: ${element.logoBackground}" >
