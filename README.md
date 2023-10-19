@@ -10,7 +10,7 @@ A dev-jobs app with Flask and JavaScript.
 
 ### Links
 
-- Live URL: not available yet
+- Live URL: https://dev-jobs-2vdl.onrender.com/
 
 ### The App
 
@@ -18,21 +18,18 @@ Users should be able to:
 
 - View the optimal layout for each of the website's pages depending on their
   device's screen size.
-- See hover states for all interactive elements on the page.
 - View each page and be able to toggle between the tabs to see different
   information.
-- Be able to click a job from the index page so that they can read more
+- Be able to filter jobs from the home page.
+- Be able to search for a specific job.
+- Be able to click a job from the home page so that they can read more
   information and apply for the job.
 - Add a new job.
 
--- More possible features --
-
-- Be able to filter jobs from the index page.
-- Be able to search for a specific job.
-
 ### Screenshot
 
--- not available yet --
+![Home](./design/home.jpg) ![Job Details](./design/job-details.jpg)
+![Add Job](./design/add-job.jpg)
 
 ### Languages & Tools
 
