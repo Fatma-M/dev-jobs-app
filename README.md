@@ -4,14 +4,14 @@ A dev-jobs app with Flask and JavaScript.
 
 ## Table of content
 
-- [Links](#links)
+- [Live URL](#live-url)
 - [Description](#description)
 - [Screenshots](#screenshots)
 - [Built With](#built-with)
 
-### Link
+### Live URL
 
-- Live URL: https://dev-jobs-2vdl.onrender.com/
+https://dev-jobs-2vdl.onrender.com/
 
 ### Description
 
