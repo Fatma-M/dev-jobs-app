@@ -2,17 +2,18 @@
 
 A dev-jobs app with Flask and JavaScript.
 
-## Table of contents
+## Table of content
 
 - [Links](#links)
-- [The App](#the-challenge)
-- [Screenshot](#screenshot)
+- [Description](#description)
+- [Screenshots](#screenshots)
+- [Built With](#built-with)
 
-### Links
+### Link
 
 - Live URL: https://dev-jobs-2vdl.onrender.com/
 
-### The App
+### Description
 
 Users should be able to:
 
@@ -26,12 +27,12 @@ Users should be able to:
   information and apply for the job.
 - Add a new job.
 
-### Screenshot
+### Screenshots
 
 ![Home](./design/home.jpg) ![Job Details](./design/job-details.jpg)
 ![Add Job](./design/add-job.jpg)
 
-### Languages & Tools
+### Built With
 
 - HTML
 - CSS & Tailwind CSS
