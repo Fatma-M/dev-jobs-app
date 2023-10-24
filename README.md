@@ -7,7 +7,9 @@ A dev-jobs app with Flask and JavaScript.
 - [Live URL](#live-url)
 - [Description](#description)
 - [Screenshots](#screenshots)
-- [Built With](#built-with)
+- [Tools](#tools)
+- [Installation](#installation-requirements)
+- [Run](#run-the-development-server)
 
 ### Live URL
 
@@ -32,9 +34,18 @@ Users should be able to:
 ![Home](./design/home.jpg) ![Job Details](./design/job-details.jpg)
 ![Add Job](./design/add-job.jpg)
 
-### Built With
+### Tools
 
 - HTML
 - CSS & Tailwind CSS
 - JavaScrip & Browser Local Storage
 - Python & Flask
+
+### Installation Requirements
+
+- Python - V 3.11.5
+- Flask - V 3.0.0
+
+### Run The Development Server
+
+`flask run`
