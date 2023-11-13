@@ -48,4 +48,31 @@ Users should be able to:
 
 ### Run The Development Server
 
-`flask run`
+#### Using Flask Run:
+
+1. Install Python (https://www.python.org/downloads/)
+2. Install required dependencies:
+
+```
+ pip install -r requirements.txt
+```
+
+3. Then run the app with:
+
+```python
+flask run
+```
+
+4. Open a new webpage with this address (http://127.0.0.1:5000)
+
+#### Using Docker:
+
+1. Install Docker (https://www.docker.com/products/docker-desktop/)
+2. Build and run:
+
+```python
+docker compose up --build # Only for the first run
+docker compose up # For subsequent runs
+```
+
+4. Open a new webpage with this address (http://127.0.0.1:8000)

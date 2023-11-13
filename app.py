@@ -1,3 +1,4 @@
+
 # GLOBAL IMPORTS
 from flask import Flask, render_template, request, redirect
 import csv
@@ -118,4 +119,4 @@ def add_job_page():
 
 # RUN APP WITH DEBUG MODE
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host ='0.0.0.0',debug=True)

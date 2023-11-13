@@ -759,6 +759,10 @@ video {
   height: 100%;
 }
 
+.w-28 {
+  width: 7rem;
+}
+
 .w-9 {
   width: 2.25rem;
 }
@@ -798,10 +802,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-28 {
-  width: 7rem;
 }
 
 .flex-1 {
@@ -903,10 +903,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.justify-self-end {
-  justify-self: end;
 }
 
 .rounded-2xl {
@@ -1012,11 +1008,6 @@ video {
   padding-right: 3.5rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1065,26 +1056,6 @@ video {
 .py-9 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
-}
-
-.pr-8 {
-  padding-right: 2rem;
-}
-
-.pr-9 {
-  padding-right: 2.25rem;
-}
-
-.pr-7 {
-  padding-right: 1.75rem;
-}
-
-.pr-6 {
-  padding-right: 1.5rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .text-center {
@@ -1474,10 +1445,6 @@ input:-webkit-autofill:active {
     align-items: flex-end;
   }
 
-  .sm\:gap-7 {
-    gap: 1.75rem;
-  }
-
   .sm\:gap-8 {
     gap: 2rem;
   }
@@ -1500,11 +1467,6 @@ input:-webkit-autofill:active {
     padding-right: 3rem;
   }
 
-  .sm\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
   .sm\:text-left {
     text-align: left;
   }
@@ -1519,6 +1481,10 @@ input:-webkit-autofill:active {
     top: 0px;
   }
 
+  .md\:mr-3 {
+    margin-right: 0.75rem;
+  }
+
   .md\:mr-4 {
     margin-right: 1rem;
   }
@@ -1529,10 +1495,6 @@ input:-webkit-autofill:active {
 
   .md\:mt-\[120px\] {
     margin-top: 120px;
-  }
-
-  .md\:mr-3 {
-    margin-right: 0.75rem;
   }
 
   .md\:h-\[120px\] {
@@ -1587,10 +1549,6 @@ input:-webkit-autofill:active {
     gap: 0.25rem;
   }
 
-  .md\:gap-4 {
-    gap: 1rem;
-  }
-
   .md\:rounded-none {
     border-radius: 0px;
   }
@@ -1601,6 +1559,11 @@ input:-webkit-autofill:active {
 
   .md\:bg-header-pattern {
     background-image: url('/static/images/desktop/bg-pattern-header.svg');
+  }
+
+  .md\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .md\:px-4 {
@@ -1618,19 +1581,14 @@ input:-webkit-autofill:active {
     padding-right: 1.75rem;
   }
 
-  .md\:py-2 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
   }
 
-  .md\:px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  .md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .md\:pr-3 {
